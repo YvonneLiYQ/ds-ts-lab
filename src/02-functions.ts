@@ -62,3 +62,22 @@ function sortColleagues(
   }
   console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));  
   console.log(findFriends(friends, (friend) => friend.age < 35));
+
+  // Assuming the Friend type has an 'interests' property that is an array of strings
+
+function addInterest(friend: Friend, interest: string): string[] {
+    // Check if the interests array exists; if not, initialize it
+    if (!friend.interests) {
+      friend.interests = [];
+    }
+  
+    // Add the new interest to the friend's interests array
+    friend.interests.push(interest);
+  
+    // Return the updated interests array
+    return friend.interests;
+  }
+  
+  // Example usage
+  console.log(addInterest(friends[1], 'Politics')); // Adds 'Politics' to the interests of the first friend and logs the updated interests array
+  
